@@ -54,7 +54,7 @@ dotnet publish
 # ... (build output)
 # Generated app bundle at .../bin/Release/net8.0/browser-wasm/AppBundle/
 ```
-Now you can serve your app from the `bin/Release/net8.0/browser-wasm/AppBundle` folder (for .NET 8.0, for example) using your favorite web server (such as Azure Static Web Apps).
+Now you can serve your app from the `bin/Release/net8.0/browser-wasm/App` folder (for .NET 8.0, for example) using your favorite web server (such as Azure Static Web Apps).
 
 > **Beware:**
 Currently using `dotnet publish` with the `-o` or `--output` flag does not produce the AppBundle folder in the output directory. (See [this issue](https://github.com/dotnet/runtime/issues/94319).) You'll still have to grab it out of the `bin` directory at the path specified by the publish output.
@@ -84,4 +84,4 @@ Starting from Avalonia 11.0 [Avalonia.Browser](https://www.nuget.org/packages/Av
 
 If you have not performed the step to install required workloads, you might encounter errors when running the app in your browser later (e.g. `System.DllNotFoundException: libSkiaSharp`) and you will need to rebuild again before the app will run.
 
-Keep in mind, that WebAssembly in general as a technology is limited. .NET Multithreading is not supported by any browser and is only available starting .NET 8. Any normal app also has to comply with Browser sandboxing mechanism. And while Avalonia does its best to keep performance high, any WebAssembly GUI apps in some cases might be slow or with older browsers.
+Keep in mind, that WebAssembly in general as a technology is limited. .NET Multithreading is not supported by any browser and is only available starting .NET 8. Any normal app also has to comply with Browser sandboxing mechanism. While Avalonia does its best to keep performance high, any WebAssembly GUI apps might be slow, like in some cases with older browsers.
